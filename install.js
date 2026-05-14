@@ -1,0 +1,32 @@
+module.exports = {
+  run: [
+    {
+      method: "shell.run",
+      params: {
+        message: "git clone https://github.com/resemble-ai/DramaBox app"
+      }
+    },
+    {
+      when: "{{gpu === 'nvidia'}}",
+      method: "shell.run",
+      params: {
+        venv: "env",
+        path: "app",
+        message: [
+          "uv pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cu128"
+        ]
+      }
+    },
+    {
+      when: "{{gpu !== 'nvidia'}}",
+      method: "shell.run",
+      params: {
+        venv: "env",
+        path: "app",
+        message: [
+          "uv pip install -r requirements.txt"
+        ]
+      }
+    }
+  ]
+}
