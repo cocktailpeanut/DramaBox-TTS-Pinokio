@@ -1,0 +1,24 @@
+# Pinokio: DramaBox Python deps without torch/torchaudio (installed once via torch.js).
+# Sync from: https://github.com/resemble-ai/DramaBox/blob/master/requirements.txt
+# Last synced: 2026-05-14 — remove torch lines here when refreshing from upstream.
+
+# pydantic 2.11+ emits bool-shorthand `additionalProperties: True` which crashes
+# gradio_client's get_type (`if "const" in schema`). 2.10.6 is the last version
+# that still emits the dict form. Tracked at:
+# https://discuss.huggingface.co/t/154601
+pydantic==2.10.6
+safetensors>=0.4.0
+accelerate>=0.25.0
+peft>=0.7.0
+# xformers removed upstream (see DramaBox requirements comments).
+av>=12.0.0
+einops>=0.7.0
+PyYAML>=6.0
+sentencepiece>=0.1.99
+transformers>=4.45.0
+huggingface_hub>=0.20.0,<1.0
+bitsandbytes>=0.45.0
+gradio==5.7.1
+spaces>=0.30.0
+soundfile>=0.12.0
+resemble-perth @ git+https://github.com/resemble-ai/Perth.git@master
