@@ -1,6 +1,6 @@
-# Pinokio: DramaBox Python deps without torch/torchaudio (installed once via torch.js).
-# Sync from: https://github.com/resemble-ai/DramaBox/blob/master/requirements.txt
-# Last synced: 2026-05-14 — remove torch lines here when refreshing from upstream.
+# Pinokio: DramaBox-Python-Deps ohne torch/torchaudio (Torch nur über torch.js).
+# Sync von: https://github.com/resemble-ai/DramaBox/blob/master/requirements.txt
+# Bei Upstream-Änderungen: hier nachziehen, Zeilen torch/torchaudio weiter auslassen.
 
 # pydantic 2.11+ emits bool-shorthand `additionalProperties: True` which crashes
 # gradio_client's get_type (`if "const" in schema`). 2.10.6 is the last version
