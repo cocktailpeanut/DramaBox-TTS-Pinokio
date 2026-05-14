@@ -59,9 +59,22 @@ python src/inference.py \
   --cfg-scale 2.5 --stg-scale 1.5
 ```
 
-### HTTP (Gradio REST API)
+### JavaScript
 
-Once the server is running at `http://127.0.0.1:7860`, you can use the Gradio API:
+```javascript
+import { Client } from "@gradio/client";
+
+const client = await Client.connect("http://127.0.0.1:7860");
+const result = await client.predict("/generate", {
+  prompt: 'A woman speaks warmly, "Hello, how are you today?"'
+});
+
+console.log(result);
+```
+
+### Python Gradio Client
+
+Once the server is running, use the URL from **Open Web UI** with the Gradio API:
 
 ```python
 from gradio_client import Client
@@ -72,6 +85,8 @@ result = client.predict(
     api_name="/generate"
 )
 ```
+
+### Curl
 
 ```bash
 curl -X POST http://127.0.0.1:7860/api/predict \

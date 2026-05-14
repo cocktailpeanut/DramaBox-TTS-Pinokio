@@ -7,10 +7,9 @@ module.exports = {
         venv: "env",
         env: {},
         path: "app",
-        message: ["python app.py"],
+        message: ["python ../launch.py"],
         on: [{
-          // Gradio prints 0.0.0.0 — browsers on Windows need loopback for "Open Web UI"
-          event: "/http:\\/\\/(?:0\\.0\\.0\\.0|127\\.0\\.0\\.1|localhost):(\\d+)/",
+          event: "/(http:\\/\\/[0-9.:]+)/",
           done: true
         }]
       }
@@ -18,7 +17,7 @@ module.exports = {
     {
       method: "local.set",
       params: {
-        url: "http://127.0.0.1:{{input.event[1]}}"
+        url: "{{input.event[1]}}"
       }
     }
   ]
