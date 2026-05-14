@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="icon.jpeg" alt="DramaBox logo" width="160" />
+</p>
+
 # DramaBox — Pinokio Launcher
 
 A 1-click Pinokio launcher for [DramaBox](https://github.com/resemble-ai/DramaBox) by Resemble AI — expressive TTS with voice cloning, built on LTX-2.3.
