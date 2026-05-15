@@ -18,6 +18,10 @@ DramaBox is a prompt-driven text-to-speech model with voice cloning. The prompt 
 2. Click **Start** to launch the Gradio web UI.
 3. Click **Open Web UI** to open DramaBox in your browser.
 
+### Low VRAM Mode
+
+Click **Start Low VRAM** to try the experimental MMGP offload wrapper. This keeps the upstream DramaBox code in `/app` untouched and launches through `launch_low_vram.py`, which auto-selects an MMGP profile from detected CUDA VRAM after the original DramaBox server loads its components. It may reduce VRAM pressure at the cost of speed and higher system RAM usage.
+
 ### Prompt Writing Guide
 
 **Structure:** `<speaker description>, "<dialogue>" <action direction> "<more dialogue>"`
